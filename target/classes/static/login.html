@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ドーナドーナ いっしょにわるいことをしよう</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <link rel="shortcut icon" href="./images/img_home.ico">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_2143783_iq6z4ey5vu.css">
+</head>
+<body>
+
+	  <!-- 登录头部 -->
+  <div class="xtx-login-header">
+    <h1 class="logo"></h1>
+  </div>
+  <!-- 登录内容 -->
+  <div class="xtx-login-main" id="app">
+    <div class="wrapper">
+        <div class="box">
+          <div class="tab-nav">
+            <a href="javascript:;" class="active" data-id="0">账户登录</a>
+            <a href="javascript:;" data-id="1">二维码登录</a>
+          </div>
+          <div class="tab-pane">
+            <div class="link">
+              <a href="javascript:;">手机验证码登录</a>
+            </div>
+            <div class="input">
+              <span class="iconfont icon-zhanghao"></span>
+              <input required type="text" placeholder="请输入用户名称/手机号码" name="username"  v-model="loginForm.username">
+            </div>
+            <div class="input">
+              <span class="iconfont icon-suo"></span>
+              <input required type="password" placeholder="请输入密码" name="password"  v-model="loginForm.password">
+            </div>
+            <p style="color: red;" v-if="showError">{{ errorMessage }}</p>
+            <div class="agree">
+              <label for="my-checkbox">
+                <input type="checkbox" value="1" id="my-checkbox" class="remember" name="agree">
+                <span class="iconfont icon-xuanze"></span>
+              </label>
+              我已同意 <a href="javascript:;">《服务条款》</a href="javascript:;"> 和 <a>《服务条款》</a>
+            </div>
+            <div class="button clearfix">
+              <button type="submit" class="dl" id="login" @click="login()">登 录</button>
+              <!-- <a class="dl" href="./center.html">登 录</a> -->
+              <a class="fl" href="./forget.html">忘记密码？</a>
+              <a class="fr" href="./register.html">免费注册</a>
+            </div>
+          </div>
+          <div class="tab-pane" style="display: none;">
+            <img class="code" src="./images/img_home_chara03.jpg" alt="">
+          </div>
+        </div>
+    </div>
+    
+  </div>
+  <!-- 登录底部 -->
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
+</body>
+</html>
+  
+  <script>
+  	new Vue({
+  		el: "#app",
+  		data:{
+  			loginForm: {
+  				username: "loli",
+  				password: "luolicat21"
+  			},
+  			showError: false,
+  			errorMessage: ""
+  		},
+  		methods: {
+  			//登陆方法
+  			login() {
+  				if(this.isInputValid()) {
+	  				axios
+	  				.post("/user/login", this.loginForm).
+	  				then(resp => {
+	  					if(resp.data.code != 0){
+	  						console.log("执行了吗");
+	  						console.log(resp.data);
+// 	  						localStorage.setItem("userInfo",JSON.stringify(resp.data));
+// 	  						window.location.href = "/product-dev.html";
+	  					}else {
+	  						alert("账号或密码错误");
+	  						location.href = "/login.html";
+	  					}
+	  				})
+  				}else {
+  					this.showError = true;
+  		            this.errorMessage = '输入的账号或密码不符合要求';
+  				}
+  				
+  			},
+  			//校验方法
+  		isInputValid() {
+  	        return /^[a-zA-Z0-9]{4,10}$/.test(this.loginForm.username) && /^[a-zA-Z0-9]{4,10}$/.test(this.loginForm.password);
+  	      }
+  		}
+  		
+  	})
+  </script>
+  
+</body>
+
+</html>

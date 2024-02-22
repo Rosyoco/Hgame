@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>小兔鲜儿 - 新鲜 惠民 快捷!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_1939705_bgtmkonu28.css"> -->
+  <link rel="stylesheet" href="./css/commonHome.css">
+  <link rel="stylesheet" href="./css/product.css">
+  <script src="js/vue.js"></script>
+</head>
+
+<body>
+  <!-- 项部导航 -->
+  <div class="xtx_topnav" id="app">
+    <div class="wrapper">
+      <!-- 顶部导航 -->
+      <ul class="xtx_navs">
+        <li>
+          <a href="javascript:;">请先登录</a>
+        </li>
+        <li>
+          <a href="javascript:;">免费注册</a>
+        </li>
+        <li>
+          <a href=".javascript:;">我的订单</a>
+        </li>
+        <li>
+          <a href="javascript:;">会员中心</a>
+        </li>
+        <li>
+          <a href="javascript:;">帮助中心</a>
+        </li>
+        <li>
+          <a href="javascript:;">在线客服</a>
+        </li>
+        <li>
+          <a href="javascript:;" @click="logout()">
+            <i class="mobile sprites"></i>
+            退出登录
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 头部 -->
+  <div class="xtx_header">
+    <div class="wrapper">
+      <!-- 网站Logo -->
+      <h1 class="xtx_logo"><a href="/">小兔鲜儿</a></h1>
+      <!-- 主导航 -->
+      <div class="xtx_navs">
+        <ul class="clearfix">
+          <li>
+            <a href="javascript:;">首页</a>
+          </li>
+          <li>
+            <a href="javascript:;">生鲜</a>
+          </li>
+          <li>
+            <a href="javascript:;">美食</a>
+          </li>
+          <li>
+            <a href="javascript:;">餐厨</a>
+          </li>
+          <li>
+            <a href="javascript:;">电器</a>
+          </li>
+          <li>
+            <a href="javascript:;">居家</a>
+          </li>
+          <li>
+            <a href="javascript:;">洗护</a>
+          </li>
+          <li>
+            <a href="javascript:;">孕婴</a>
+          </li>
+          <li>
+            <a href="javascript:;">服装</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 站内搜索 -->
+      <div class="xtx_search clearfix">
+        <!-- 购物车 -->
+        <a href="javascript:;" class="xtx_search_cart sprites">
+          <i>2</i>
+        </a>
+        <!-- 搜索框 -->
+        <div class="xtx_search_wrapper">
+          <input type="text" placeholder="搜一搜" onclick="location.href='./search.html'">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="xtx-wrapper">
+    <div class="container">
+      <!-- 面包屑 -->
+      <div class="xtx-bread">
+        <a href="javascript:;"> 首页 > </a>
+        <a href="javascript:;"> 电子产品 > </a>
+        <a href="javascript:;"> 电视 > </a>
+        <span>小米电视4A 32英寸</span>
+      </div>
+      <!-- 商品信息 -->
+      <div class="xtx-product-info">
+        <div class="left">
+          <div class="pictrue">
+            <div class="middle">
+              <img src="./images/1.jpg" alt="">
+              <div class="layer"></div>
+            </div>
+            <div class="small">
+              <ul>
+                <li class="active"><img src="./images/1.jpg" alt=""></li>
+                <li><img src="./images/2.jpg" alt=""></li>
+                <li><img src="./images/3.jpg" alt=""></li>
+                <li><img src="./images/4.jpg" alt=""></li>
+                <li><img src="./images/5.jpg" alt=""></li>
+              </ul>
+            </div>
+            <div class="large"></div>
+          </div>
+          <div class="other">
+            <ul>
+              <li>
+                <p>销量人气</p>
+                <p>1999+</p>
+                <p>销量人气</p>
+              </li>
+              <li>
+                <p>商品评价</p>
+                <p>999+</p>
+                <p>查看评价</p>
+              </li>
+              <li>
+                <p>收藏人气</p>
+                <p>299+</p>
+                <p><a href="javascript:;">收藏商品</a></p>
+              </li>
+              <li>
+                <p>品牌信息</p>
+                <p>小米</p>
+                <p><a href="javascript:;">品牌主页</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <h3 class="name">小米电视4A 32英寸</h3>
+          <p class="desc">全面屏设计 / 高清分辨率 / 海量内容 / 1G+4G大内存 / 多核处理器</p>
+          <p class="price"><span class="now">¥1899</span><span class="old">¥2999</span></p>
+          <div class="address">
+            <div class="item">
+              <div class="dt">促销</div>
+              <div class="dd">12月好物放送，App领券购买直降120元</div>
+            </div>
+            <div class="item">
+              <div class="dt">配送</div>
+              <div class="dd">至
+                <div class="box">
+                  <span>陕西 西安 <i></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">服务</div>
+              <div class="dd">
+                <span class="fw">无忧退货</span>
+                <span class="fw">快速退款</span>
+                <span class="fw">免费包邮</span>
+                <a href="#" class="lj">了解详情</a>
+              </div>
+            </div>
+          </div>
+          <div class="attrs">
+            <div class="item">
+              <div class="dt">颜色</div>
+            </div>
+            <div class="item">
+              <div class="dt">颜色</div>
+              <div class="dd">
+                <span class="size">22英寸</span>
+                <span class="size">42英寸</span>
+                <span class="size">52英寸</span>
+                <span class="size">62英寸</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">数量</div>
+              <div class="dd">
+                <div class="num">
+                  <a href="javascript:;">-</a>
+                  <input type="text" value="1">
+                  <a href="javascript:;">+</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <a class="buy" href="javascript:;">立即购买</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 商品详情 -->
+      <div class="xtx-product-detail">
+        <div class="main">
+          <div class="cont">
+            <div class="tab-head">
+              <a href="javascript:;">商品详情</a>
+              <a href="javascript:;">商品评价<span>（998+）</span></a>
+            </div>
+            <div class="tab-pane">
+              <!-- 静态属性 -->
+              <div class="attrs">
+                <div class="item"><span>商品名称：</span><span>小米L32M5-AZ </span></div>
+                <div class="item"><span>商品编号：</span><span>4620979 </span></div>
+                <div class="item"><span>商品毛重：</span><span>8.0kg </span></div>
+                <div class="item"><span>商品产地：</span><span>中国大陆 </span></div>
+                <div class="item"><span>屏幕尺寸：</span><span>32英寸及以下 </span></div>
+                <div class="item"><span>能效等级：</span><span>三级能效 </span></div>
+                <div class="item"><span>电视类型：</span><span>人工智能 </span></div>
+                <div class="item"><span>选购指数：</span><span>6.9-6.0 </span></div>
+                <div class="item"><span>观看距离：</span><span>2m以下（≤32英寸）</span></div>
+              </div>
+              <!-- 详情内容 -->
+              
+            </div>
+            <div class="tab-pane" style="display: none;">评价</div>
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+  <!-- 公共底部 -->
+  <div class="xtx_footer clearfix">
+    <div class="wrapper">
+      
+    <!-- 其它 -->
+    <div class="extra">
+      <div class="wrapper">
+        <!-- 口号 -->
+        <div class="slogan">
+          <a href="javascript:;" class="price">价格亲民</a>
+          <a href="javascript:;" class="express">物流快捷</a>
+          <a href="javascript:;" class="quality">品质新鲜</a>
+        </div>
+        <!-- 版权信息 -->
+        <div class="copyright">
+          <p>
+            <a href="javascript:;">关于我们</a>
+            <a href="javascript:;">帮助中心</a>
+            <a href="javascript:;">售后服务</a>
+            <a href="javascript:;">配送与验收</a>
+            <a href="javascript:;">商务合作</a>
+            <a href="javascript:;">搜索推荐</a>
+            <a href="javascript:;">友情链接</a>
+          </p>
+          <p>CopyRight &copy; 小兔鲜儿</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
+    
+  <script>
+    //1.三つの箱要素を取得する
+    //小さな箱
+    const small = document.querySelector('.small')
+    //中等箱
+    const middle = document.querySelector('.middle')
+    //大きな箱
+    const large = document.querySelector('.large')
+
+    //2.小さな箱の写真を切り替え
+    small.addEventListener('mouseover', function(e){
+      if(e.target.tagName === 'IMG'){
+        //排他的思想 ほかのactiveを消す
+        this.querySelector('.active').classList.remove('active')
+        //クリックされた要素の親要素(li)にactiveを追加する
+        e.target.parentNode.classList.add('active')
+        //中等箱の写真を小さな箱のと同じにする
+        // console.log(e.target)
+        middle.querySelector('img').src = e.target.src
+
+        //大きな箱の写真を小さな箱のと同じにする
+        large.style.backgroundImage = `url(${e.target.src})`
+      }
+    })
+
+    //3.マウスが中等箱を通過したり離れたりすると↓↓↓↓↓↓↓
+    //大きな箱が表示されたり隠れたりします
+    middle.addEventListener('mouseenter', show)
+    middle.addEventListener('mouseleave', hide)
+    let timeId = 0
+    //表示される関数
+    function show(){
+      clearTimeout(timeId)
+      large.style.display = 'block'
+    }
+    //隠れる関数
+    function hide(){
+      timeId = setTimeout( () => {
+        large.style.display = 'none'
+      }, 200)
+    }
+
+    //4.大きな箱小が表示されたり隠れたりします
+    large.addEventListener('mouseenter', show)
+    large.addEventListener('mouseleave', hide)
+
+    //5.マウスが中等箱を通ると黒い箱が表示される
+    const layer = document.querySelector('.layer')
+    middle.addEventListener('mouseenter', () => {
+      layer.style.display = 'block'
+    })
+    middle.addEventListener('mouseleave', () => {
+      layer.style.display = 'none'
+    })
+
+    //6.黒い箱を移動する
+    middle.addEventListener('mousemove', function(e){
+      //マウスが中等箱に対しての座標 ＝ マウスが画面に対しての座標 ー 中等箱が画面に対しての座標
+      let x = e.pageX - middle.getBoundingClientRect().left
+      let y = e.pageY - middle.getBoundingClientRect().top - document.documentElement.scrollTop
+      //黒い箱の移動を大きな箱に制限する
+      if(x >=0 && x <=400 && y >=0 && y <=400){
+        //黒い箱は常に移動するではありません
+        //黒い箱の移動距離
+        let mx = 0, my = 0
+        if(x < 100) mx = 0
+        if(x >= 100 && x <= 300) mx = x - 100
+        if(x > 300) mx = 200
+
+        if(y < 100) my = 0
+        if(y >= 100 && y <= 300) my = y - 100
+        if(y > 300) my = 200
+        layer.style.left = mx + 'px'
+        layer.style.top = my + 'px'
+
+        //7.拡大鏡効果の実現 
+        large.style.backgroundPositionX = -2 * mx + 'px'
+        large.style.backgroundPositionY = -2 * my + 'px'
+      }
+    })
+    
+    new Vue({
+  		el: "#app",
+  		methods: {
+  			logout: function() {
+  				axios
+  				.post("http://localhost:8080/user/logout").
+  				then(resp => {
+  					if(resp.data.code != 0){
+  						localStorage.removeItem("userInfo");
+  						location.href = "http://localhost:8080/login.html";
+  					}
+  				})
+  			}
+  		},
+  		mounted() {
+            // 设置响应拦截器
+            axios.interceptors.response.use(
+                function (response) {
+                	console.log("执行了")
+                    // 如果响应状态码是 200，则直接返回响应数据
+                    if (response.data.code === 0 && response.data.msg === "NOTLOGIN") {
+                    	location.href = "/login.html";
+                    } 
+                    	return response.data;
+                    
+                },
+                function(error) {
+                	return Promise.reject(error);
+                }
+                
+            )
+        }
+  	})
+    
+    </script>
+    
+
+</body>
+</html>
