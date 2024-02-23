@@ -24,12 +24,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/user")
 @Slf4j
 public class UserController {
-	
+
 	@Autowired
 	private JwtProperties jwtProperties;
 	@Autowired
 	private UserService userService;
-	
+
 	/**
      * 登录
      *
@@ -42,7 +42,7 @@ public class UserController {
 
 
         User userC = userService.loginService(user);
-        
+
         if(userC == null) {
         	return Result.error("账号或密码错误,请重新登录");
         }
@@ -53,17 +53,17 @@ public class UserController {
                 jwtProperties.getAdminSecretKey(),
                 jwtProperties.getAdminTtl(),
                 claims);
-       
+
         UserVO userVO = UserVO.builder()
         		.username(userC.getUsername())
         		.password(userC.getPassword())
         		.token(token)
         		.build();
-        
+
         request.getSession().setAttribute("username", user.getUsername() +"21");
         return Result.success(userVO);
     }
-    
+
     @PostMapping("/logout")
     public Result<String> logout(HttpServletRequest request){
     	log.info("用户退出登录：{}", request.getSession().getAttribute("username"));
