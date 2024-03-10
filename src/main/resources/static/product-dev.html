@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./css/commonHome.css">
   <link rel="stylesheet" href="./css/product.css">
   <script src="js/vue.js"></script>
+  <script src="js/axios.js"></script>
 </head>
 
 <body>
@@ -266,9 +267,6 @@
     </div>
   </div>
   
-    <script src="js/vue.js"></script>
-    <script src="js/axios.js"></script>
-    
   <script>
     //1.三つの箱要素を取得する
     //小さな箱
@@ -357,31 +355,38 @@
   				axios
   				.post("http://localhost:8080/user/logout").
   				then(resp => {
-  					if(resp.data.code != 0){
+  					if(resp.code === 1){
   						localStorage.removeItem("userInfo");
   						location.href = "http://localhost:8080/login.html";
   					}
   				})
+  			},
+  			search(){
+  				axios.post("http://localhost:8080/user/search").then(resp => {
+  				});
   			}
   		},
-  		mounted() {
+  		created(){
+  			
             // 设置响应拦截器
             axios.interceptors.response.use(
-                function (response) {
-                	console.log("执行了")
+                function (resp) {
                     // 如果响应状态码是 200，则直接返回响应数据
-                    if (response.data.code === 0 && response.data.msg === "NOTLOGIN") {
-                    	location.href = "/login.html";
+                    if (resp.data.code === 0 && resp.data.msg === "NOTLOGIN") {
+                    	location.href = "http://localhost:8080/login.html";
                     } 
-                    	return response.data;
+                    	return resp.data;
                     
                 },
                 function(error) {
                 	return Promise.reject(error);
                 }
                 
-            )
-        }
+            ),
+            this.search()
+  			
+  		}
+  		
   	})
     
     </script>

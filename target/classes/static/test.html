@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <!-- 引入 Axios 库 -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+  <button>点击</button>
+     页面内容
+  </div>
+
+  <script>
+    // 设置响应拦截器
+    axios.interceptors.response.use(
+      function (response) {
+        // 在这里进行拦截和处理后端返回的数据
+        // 例如，检查返回的状态码或其他字段
+        if (response.data.code === 0 && response.data.msg === "NOTLOGIN") {
+          // 如果需要重定向到登录页面，可以使用 window.location.href
+          window.location.href = "/login.html";
+        }
+        // 返回响应数据，继续正常的数据流程
+        return response;
+      },
+      function (error) {
+        // 对请求错误做些什么，比如打印错误信息或者执行其他操作
+        return Promise.reject(error);
+      }
+    );
+
+    // 在这里添加其他 Vue 实例的代码，或者其他逻辑
+  </script>
+</body>
+
+</html>
