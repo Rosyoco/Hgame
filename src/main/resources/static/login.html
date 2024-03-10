@@ -101,7 +101,26 @@
   		isInputValid() {
   	        return /^[a-zA-Z0-9]{4,10}$/.test(this.loginForm.username) && /^[a-zA-Z0-9]{4,10}$/.test(this.loginForm.password);
   	      }
-  		}
+  		},
+  		created:function(){
+  	    	axios.interceptors.response.use(
+  	    	      function (response) {
+  	    	    	  alert("拦截执行了吗");
+  	    	        // 在这里进行拦截和处理后端返回的数据
+  	    	        // 例如，检查返回的状态码或其他字段
+  	    	        if (response.data.code === 0 && response.data.msg === "NOTLOGIN") {
+  	    	          // 如果需要重定向到登录页面，可以使用 window.location.href
+  	    	          window.location.href = "/login.html";
+  	    	        }
+  	    	        // 返回响应数据，继续正常的数据流程
+  	    	        return response;
+  	    	      },
+  	    	      function (error) {
+  	    	        // 对请求错误做些什么，比如打印错误信息或者执行其他操作
+  	    	        return Promise.reject(error);
+  	    	      }
+  	    	    );
+  	      }
   		
   	})
   </script>

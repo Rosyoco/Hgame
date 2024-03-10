@@ -366,6 +366,7 @@
   				});
   			}
   		},
+<<<<<<< HEAD
   		created(){
   			
             // 设置响应拦截器
@@ -373,6 +374,16 @@
                 function (resp) {
                     // 如果响应状态码是 200，则直接返回响应数据
                     if (resp.data.code === 0 && resp.data.msg === "NOTLOGIN") {
+=======
+  		created() {
+            // 设置响应拦截器
+            axios.interceptors.response.use(
+                function (response) {
+                	alert("1");
+                    // 如果响应状态码是 200，则直接返回响应数据
+                    if (response.data.code === 0 && response.data.msg === "NOTLOGIN") {
+                    	alert("2");
+>>>>>>> origin/master
                     	location.href = "http://localhost:8080/login.html";
                     } 
                     	return resp.data;
@@ -382,10 +393,15 @@
                 	return Promise.reject(error);
                 }
                 
+<<<<<<< HEAD
             ),
             this.search()
   			
   		}
+=======
+            )
+        }
+>>>>>>> origin/master
   		
   	})
     
